@@ -7,7 +7,9 @@ import auth
 pp = pprint.PrettyPrinter(indent=1)#this makes the data readable
 non_bmp_map = dict.fromkeys(range(0x10000, sys.maxunicode + 1), 0xfffd) #handles those pesky emojis for printing only
 
-def greeter( real_name, location, username ):
+def greeter( real_name, username, location=None ):
+    if location is None:
+        location = "twitterverse"
     #greeter
     greeter_list = ["hello " + name + " whats the weather like in " + location,
                     "thanks for following, " + name + "I'm a semi smart twitterbot floating somewhere near" + location,
@@ -81,7 +83,7 @@ access_token        = auth.access_token
 access_token_secret = auth.access_token_secret
 
 #filters
-naughty_words = ["NFL", "angry", "sad", "kardashian", "likeforlike", "instalike", "hot", "growth_hacking"]
+naughty_words = ["NFL", "angry", "sad", "kardashian", "likeforlike", "instalike", "hot", "growth_hacking", "#free", "#eBay"]
 good_words = [ "#tech", "#code", "#computers", "#technology", "#programming", "#software", "#hardware", "#linux"]
 findlist = " OR ".join(good_words)
 blacklist = " -".join(naughty_words)
@@ -112,12 +114,9 @@ while True:
         name = lookup[0]["name"]
         print("new follower: " + username)
         #lookup[0]["location"]
-        try:
-            location = lookup[0]["location"]
-            #print(location)
-        except:
-            location = "the twitterverse"
-        greeter( name, location, username )
+        location = lookup[0]["location"]
+        #print(location)
+        greeter( name, username, location )
     prev_last_follower = last_follower
     #print(prev_last_follower)
     #for follower in followers['ids']:
@@ -125,7 +124,7 @@ while True:
     ##api.create_friendship(user_id=followers_ids)
   except TwythonError as e:
     print(e)
-  time.sleep(120)
+  time.sleep(5)
 
 
 
