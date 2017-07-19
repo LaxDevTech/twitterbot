@@ -21,10 +21,11 @@ and setup a second number.__
 --------------------------------------------------------------------------------------------------
 ### getting started
 
-1. fork this repo
+1. [fork](https://help.github.com/articles/fork-a-repo/) this repo
 2. [clone](https://help.github.com/articles/cloning-a-repository/) onto your local machine
-3. Once you have your API keys add them to the ```auth.py``` file.
-4. run your choosen file in your shell of choice or from the terminal.
+3. Once you have your API keys add them to the ```example-auth.py``` file.
+4. Change the name of ```example-auth.py``` to ```auth.py```
+5. run your choosen file in your shell of choice or from the terminal.
  - [Mac/Linux/BSD](http://www.python-course.eu/python3_execute_script.php)
  - [Windows](https://www.techwalla.com/articles/how-to-run-a-python-script)
 
