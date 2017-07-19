@@ -1,4 +1,4 @@
-# Twitterbot <img src="twitterbot.png" alt="robo-bord" style="width: 200px, align: right;"/>
+# Twitterbot <img src="twitterbot.png" alt="robo-bord" style="width: 100px, align: right;"/>
 This the twitter bot for the laxdevtech account. @laxdevtech if you want to say hello!
 
 
