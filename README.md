@@ -1,6 +1,9 @@
 # twitterbot
 This the twitter bot for the laxdevtech account. @laxdevtech if you want to say hello!
 
+![](twitterbot.png)
+
+------------------------------------------------------------------------------------------------
 ### setup
 
 Things you will need locally if you want to develop or run your own version:
@@ -15,6 +18,7 @@ Things you will need locally if you want to develop or run your own version:
 __Note: You will need a phone number to get the API keys, if you don't want to use your number [google voice](https://voice.google.com/) you can use something like
 and setup a second number.__
 
+--------------------------------------------------------------------------------------------------
 ### getting started
 
 1 fork this repo
@@ -25,4 +29,6 @@ and setup a second number.__
  - [Windows](https://www.techwalla.com/articles/how-to-run-a-python-script)
 
 __you're all set__
+
+You read more about Twython's extensive  
 
