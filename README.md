@@ -1,4 +1,4 @@
-# Twitterbot ![](twitterbot.png =60x60)
+# Twitterbot <img src="twitterbot.png" alt="robo-bord" style="width: 200px, align: right;"/>
 This the twitter bot for the laxdevtech account. @laxdevtech if you want to say hello!
 
 
