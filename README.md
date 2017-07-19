@@ -1,7 +1,7 @@
-# twitterbot
+# Twitterbot ![](twitterbot.png =60x60)
 This the twitter bot for the laxdevtech account. @laxdevtech if you want to say hello!
 
-![](twitterbot.png)
+
 
 ------------------------------------------------------------------------------------------------
 ### setup
