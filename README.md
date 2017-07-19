@@ -1,4 +1,4 @@
-# Twitterbot <img src="twitterbot.png" alt="robo-bord" style="width: 50px"/>
+# Twitterbot <img src="twitterbot.png" alt="robo-bird" style="width: 100px"/>
 This the twitter bot for the laxdevtech account. @laxdevtech if you want to say hello!
 
 
@@ -21,10 +21,10 @@ and setup a second number.__
 --------------------------------------------------------------------------------------------------
 ### getting started
 
-1 fork this repo
-2 [clone](https://help.github.com/articles/cloning-a-repository/) onto your local machine
-3 Once you have your API keys add them to the ```auth.py``` file.
-4 run your choosen file in your shell of choice or from the terminal.
+1. fork this repo
+2. [clone](https://help.github.com/articles/cloning-a-repository/) onto your local machine
+3. Once you have your API keys add them to the ```auth.py``` file.
+4. run your choosen file in your shell of choice or from the terminal.
  - [Mac/Linux/BSD](http://www.python-course.eu/python3_execute_script.php)
  - [Windows](https://www.techwalla.com/articles/how-to-run-a-python-script)
 
