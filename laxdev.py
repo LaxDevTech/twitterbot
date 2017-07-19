@@ -124,7 +124,7 @@ while True:
     ##api.create_friendship(user_id=followers_ids)
   except TwythonError as e:
     print(e)
-  time.sleep(5)
+  time.sleep(120)
 
 
 
