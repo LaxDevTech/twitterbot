@@ -8,6 +8,9 @@ consumer_secret     = auth.consumer_secret
 access_token        = auth.access_token
 access_token_secret = auth.access_token_secret
 
+# passing the keys to to Twython
+twitter = Twython(consumer_key, consumer_secret, access_token, access_token_secret)
+
 message = "Hello world"
 
 twitter.update_status(status=message)

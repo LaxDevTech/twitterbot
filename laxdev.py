@@ -4,15 +4,18 @@ import pprint
 import random
 from twython import Twython, TwythonError
 import auth
-pp = pprint.PrettyPrinter(indent=1)#this makes the data readable
-non_bmp_map = dict.fromkeys(range(0x10000, sys.maxunicode + 1), 0xfffd) #handles those pesky emojis for printing only
+pp = pprint.PrettyPrinter(depth=4)#this makes the data readable
 
+#handles those pesky emojis for printing only
+non_bmp_map = dict.fromkeys(range(0x10000, sys.maxunicode + 1), 0xfffd)
+
+# functions start 
 def greeter( real_name, username, location=None ):
     if location is None:
         location = "twitterverse"
     #greeter
     greeter_list = ["hello " + name + " whats the weather like in " + location,
-                    "thanks for following, " + name + "I'm a semi smart twitterbot floating somewhere near" + location,
+                    "thanks for following, " + name + "I'm a semi smart twitterbot floating somewhere near " + location,
                     name + "," + "are you a bot aswell? What's a " + location,
                     "hey " + name + ", tweet me anytime #chatty",
                     "what are followers? and whats a " + name + "? #twitterbot"]
@@ -61,11 +64,11 @@ def reply():
         print("no interaction")
 def retweet():
     #retweet tweets of interest
-    search_results = twitter.search(q=keywords, count=10, result_type='recent')
-    #pp.pprint(search_results)
+    search_results = twitter.search(q=keywords, count=20, result_type='popular')
+    #pp.pprint(str(search_results["statuses"]).translate(non_bmp_map))
     try:
         for tweet in search_results["statuses"]:
-           if tweet["retweet_count"] > 150:
+           if tweet["retweet_count"] > 50:
              #pp.pprint(tweet)
              try:
                 twitter.retweet(id = tweet["id_str"])
@@ -75,7 +78,8 @@ def retweet():
     except TwythonError as e:
         print(e)
     print("nothing to retweet....")
-
+#functions end
+    
 #our keys to intereact with twitters api
 consumer_key        = auth.consumer_key
 consumer_secret     = auth.consumer_secret
@@ -118,10 +122,14 @@ while True:
         #print(location)
         greeter( name, username, location )
     prev_last_follower = last_follower
+
     #print(prev_last_follower)
-    #for follower in followers['ids']:
-      #print(follower)
-    ##api.create_friendship(user_id=followers_ids)
+    print("complete list of follower ids:")
+    for follower in followers['ids']:
+      print(follower)
+
+## TODO do they want the bot 
+##api.create_friendship(user_id=followers_ids)
   except TwythonError as e:
     print(e)
   time.sleep(120)

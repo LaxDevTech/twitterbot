@@ -20,25 +20,17 @@ keywords = findlist + blacklist
 #passing the keys to to Twython
 twitter = Twython(consumer_key, consumer_secret, access_token, access_token_secret)
 
-###laxdev timeline
-timeline = twitter.get_user_timeline() 
-last_tweet = timeline[0]
-last_tweet_id = str(last_tweet["id"])
-
-reply_search = twitter.search(q="@laxdevtech", since_id=last_tweet_id)
-# tweet to last reply
-if reply_search["statuses"]:
-        for tweet in reply_search["statuses"]:
-            pp.pprint(tweet['user']['screen_name'])
-            user = tweet['user']['screen_name']
-            text = tweet['text']
-            name = tweet['user']['name']
-            id = str(tweet['id'])
-        header = "@" + user + " "
-        reply = text.lower()
-        number = random.randrange(0, len(replies))
-        twitter.update_status(status=header + name + ", " + replies[number], in_reply_to_status_id=id)
-        print("tweeted: " + header + name + ", " + replies[number])
-else:
-    print("no interaction")
-
+#retweet tweets of interest        
+search_results = twitter.search(q=keywords, count=10, result_type='recent')
+#pp.pprint(search_results)
+try:
+    for tweet in search_results["statuses"]:
+       #if tweet["retweet_count"] > 50:
+         #pp.pprint(tweet)
+         try:
+            twitter.retweet(id = tweet["id_str"])
+            print("tweeted: " + tweet["id_str"])
+         except TwythonError as e:
+            print(e)
+except TwythonError as e:
+    print(e)
