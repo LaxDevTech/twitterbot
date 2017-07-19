@@ -16,6 +16,7 @@ def greeter( real_name, location, username ):
                     "what are followers? and whats a " + name + "? #twitterbot"]
     number = random.randrange(0, len(greeter_list))
     twitter.update_status(status="@" + username  + " " + greeter_list[number] + " ")
+    print("tweeted: " + status="@" + username  + " " + greeter_list[number] + " ")
 
 def reply():
     #replies
@@ -104,7 +105,7 @@ while True:
         lookup = twitter.lookup_user(user_id=last_follower)
         #pp.pprint(str(lookup).translate(non_bmp_map))
         username = lookup[0]["screen_name"]
-        print("same latest follower: " + username)
+        print("no new followers, latest: " + username)
     else:
         print("new latest follower")
         lookup = twitter.lookup_user(user_id=last_follower)
@@ -123,11 +124,11 @@ while True:
     prev_last_follower = last_follower
     print(prev_last_follower)
     for follower in followers['ids']:
-        print(follower)
+        #print(follower)
     ##api.create_friendship(user_id=followers_ids)
   except TwythonError as e:
     print(e)
-  time.sleep(10)
-    # Auto Following function #TODO
+  time.sleep(120)
+
 
 
