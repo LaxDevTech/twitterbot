@@ -16,7 +16,7 @@ def greeter( real_name, location, username ):
                     "what are followers? and whats a " + name + "? #twitterbot"]
     number = random.randrange(0, len(greeter_list))
     twitter.update_status(status="@" + username  + " " + greeter_list[number] + " ")
-    print("tweeted: " + status="@" + username  + " " + greeter_list[number] + " ")
+    print("tweeted: " + "@" + username  + " " + greeter_list[number] + " ")
 
 def reply():
     #replies
@@ -37,7 +37,7 @@ def reply():
            "A SQL query goes into a bar, walks up to two tables and asks, 'Can I join you?' #database",
            "Can someone make a bot to talk to me? #lonelybot"]
     #laxdev timeline
-    timeline = twitter.get_user_timeline() 
+    timeline = twitter.get_user_timeline()
     last_tweet = timeline[0]
     last_tweet_id = str(last_tweet["id"])
 
@@ -58,7 +58,7 @@ def reply():
     else:
         print("no interaction")
 def retweet():
-    #retweet tweets of interest        
+    #retweet tweets of interest
     search_results = twitter.search(q=keywords, count=10, result_type='recent')
     #pp.pprint(search_results)
     try:
@@ -82,7 +82,7 @@ access_token_secret = auth.access_token_secret
 
 #filters
 naughty_words = ["NFL", "angry", "sad", "kardashian", "likeforlike", "instalike", "hot", "growth_hacking"]
-good_words = [ "#tech", "#code", "#computers", "#technology", "#programming", "#software", "#hardware", "#linux"] 
+good_words = [ "#tech", "#code", "#computers", "#technology", "#programming", "#software", "#hardware", "#linux"]
 findlist = " OR ".join(good_words)
 blacklist = " -".join(naughty_words)
 keywords = findlist + blacklist
@@ -94,37 +94,34 @@ while True:
   reply()
   retweet()
   followers = twitter.get_followers_ids(screen_name = "laxdevtech") #list followers of laxdevtech
-  try:    
+  try:
     try: prev_last_follower # checks for undefined
     except:
         prev_last_follower = None # this gives a value to prev_last_follower
-    print(followers['ids'][0])
-    last_follower  = followers['ids'][0] #
+    #print(followers['ids'][0])
+    last_follower  = followers['ids'][0] #latest_follwoer
     if prev_last_follower == last_follower:
-        print("No new followers")
+        print("no new followers, latest: " + username)
         lookup = twitter.lookup_user(user_id=last_follower)
         #pp.pprint(str(lookup).translate(non_bmp_map))
-        username = lookup[0]["screen_name"]
-        print("no new followers, latest: " + username)
+        username = lookup[0]["screen_name"]        
     else:
-        print("new latest follower")
         lookup = twitter.lookup_user(user_id=last_follower)
         #pp.pprint(str(lookup).translate(non_bmp_map))
         username = lookup[0]["screen_name"]
         name = lookup[0]["name"]
         print("new follower: " + username)
-        
+        #lookup[0]["location"]
         try:
-            lookup[0]["location"]
             location = lookup[0]["location"]
             #print(location)
         except:
             location = "the twitterverse"
         greeter( name, location, username )
     prev_last_follower = last_follower
-    print(prev_last_follower)
-    for follower in followers['ids']:
-        #print(follower)
+    #print(prev_last_follower)
+    #for follower in followers['ids']:
+      #print(follower)
     ##api.create_friendship(user_id=followers_ids)
   except TwythonError as e:
     print(e)
