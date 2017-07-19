@@ -33,5 +33,5 @@ __you're all set__
 
 You read more about Twython's extensive functionality [here](https://twython.readthedocs.io/en/latest/).
 
-Happy tweeting! :octocat:
+Happy tweeting! 
 
