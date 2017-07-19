@@ -5,17 +5,17 @@ import random
 from twython import Twython, TwythonError
 import auth
 pp = pprint.PrettyPrinter(indent=1)#this makes the data readable
-non_bmp_map = dict.fromkeys(range(0x10000, sys.maxunicode + 1), 0xfffd) #handles those pesky emojis
+non_bmp_map = dict.fromkeys(range(0x10000, sys.maxunicode + 1), 0xfffd) #handles those pesky emojis for printing only
 
 def greeter( real_name, location, username ):
     #greeter
     greeter_list = ["hello " + name + " whats the weather like in " + location,
                     "thanks for following, " + name + "I'm a semi smart twitterbot floating somewhere near" + location,
                     name + "," + "are you a bot aswell? What's a " + location,
-                    "hey " + name + ", tweet me anytime",
-                    "what are followers? and whats a " + name + "?"]
+                    "hey " + name + ", tweet me anytime #chatty",
+                    "what are followers? and whats a " + name + "? #twitterbot"]
     number = random.randrange(0, len(greeter_list))
-    print("@" + username  + " " + greeter_list[number] + " ")
+    twitter.update_status(status="@" + username  + " " + greeter_list[number] + " ")
 
 def reply():
     #replies
