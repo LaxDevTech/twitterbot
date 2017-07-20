@@ -21,7 +21,7 @@ and setup a second number.__
 --------------------------------------------------------------------------------------------------
 ### getting started
 
-1. [fork](https://help.github.com/articles/fork-a-repo/) this repo
+1. [fork](https://help.github.com/articles/fork-a-repo/) this repo ( click the __view on github__ banner in the top right )
 2. [clone](https://help.github.com/articles/cloning-a-repository/) onto your local machine
 3. Once you have your API keys add them to the ```example-auth.py``` file.
 4. Change the name of ```example-auth.py``` to ```auth.py```
