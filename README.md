@@ -15,7 +15,7 @@ Things you will need locally if you want to develop or run your own version:
   - otherwise check out the installation instructions for Twython
 - Twitter API keys you can follow [this](https://www.raspberrypi.org/learning/getting-started-with-the-twitter-api/) guide to get started
 
-__Note: You will need a phone number to get the API keys, if you don't want to use your number [google voice](https://voice.google.com/) you can use something like
+__Note: You will need a phone number to get the API keys, if you don't want to use your number you can use something like [google voice](https://voice.google.com/) 
 and setup a second number.__
 
 --------------------------------------------------------------------------------------------------
