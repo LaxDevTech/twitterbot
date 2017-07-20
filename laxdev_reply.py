@@ -42,7 +42,7 @@ last_tweet_id = str(last_tweet["id"])
 
 reply_search = twitter.search(q="@laxdevtech", since_id=last_tweet_id)
 # tweet to last reply
-#pp.pprint(str(reply_search).translate(non_bmp_map))
+pp.pprint(str(reply_search).translate(non_bmp_map))
 if reply_search["statuses"]:
         for tweet in reply_search["statuses"]:
             pp.pprint("users twitter handle: " + tweet['user']['screen_name'])
