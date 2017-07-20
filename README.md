@@ -23,7 +23,7 @@ and setup a second number.__
 
 1. [fork](https://help.github.com/articles/fork-a-repo/) this repo ( click the __view on github__ banner in the top right )
 2. [clone](https://help.github.com/articles/cloning-a-repository/) onto your local machine
-3. Once you have your API keys add them to the ```auth.py``` file.`
+3. Once you have your API keys add them to the ```auth.py``` file.
 4. run your choosen file in your shell of choice or from the terminal.
  - [Mac/Linux/BSD](http://www.python-course.eu/python3_execute_script.php)
  - [Windows](https://www.techwalla.com/articles/how-to-run-a-python-script)
