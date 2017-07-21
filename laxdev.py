@@ -28,7 +28,7 @@ def greeter(real_name, username, location=None):
 
 def reply():
     # replies
-    replies = ["have to checked out the forum? laxdev.tech #LaCrosseWI",
+    replies = ["have you checked out the forum? laxdev.tech #LaCrosseWI",
                "what a crazy life as a twitter bot",
                "if I can reply does this make me intelligent? #cleverbot",
                "sounds good but I think I'll go back to retweeting stuff #work",
