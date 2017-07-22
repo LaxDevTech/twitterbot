@@ -34,3 +34,4 @@ You read more about Twython's extensive functionality [here](https://twython.rea
 
 Happy tweeting! 
 
+> licensed [cc-by-sa](https://creativecommons.org/licenses/by-sa/4.0/) <a href="https://github.com/harps116">Adam Harpur</a> 2017
