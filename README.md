@@ -21,6 +21,8 @@ and setup a second number.__
 --------------------------------------------------------------------------------------------------
 ### getting started
 
+> note that ```_config.yml``` is configuration for github pages and is not needed for the twitterbot
+
 1. [fork](https://help.github.com/articles/fork-a-repo/) this repo ( click the __view on github__ banner in the top right )
 2. [clone](https://help.github.com/articles/cloning-a-repository/) onto your local machine
 3. Once you have your API keys add them to the ```auth.py``` file.
