@@ -30,7 +30,7 @@ and setup a second number.__
 
 __you're all set__
 
-You read more about Twython's extensive functionality [here](https://twython.readthedocs.io/en/latest/).
+You can read more about Twython's extensive functionality [here](https://twython.readthedocs.io/en/latest/).
 
 Happy tweeting! 
 
